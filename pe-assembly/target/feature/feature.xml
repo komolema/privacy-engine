@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.2.1" name="pe-assembly">
+    <feature name="pe-assembly" version="0.3-SNAPSHOT" description="pe-assembly">
+        <bundle start-level="80">mvn:ac.za.cput/pe-model/0.3-SNAPSHOT</bundle>
+        <bundle start-level="80">mvn:org.scala-lang/scala-library/2.11.1</bundle>
+        <bundle start-level="80">wrap:mvn:org.squeryl/squeryl_2.11/0.9.5-7</bundle>
+        <bundle start-level="80">wrap:mvn:cglib/cglib-nodep/2.2</bundle>
+        <bundle start-level="80">wrap:mvn:org.scala-lang/scalap/2.11.1</bundle>
+        <bundle start-level="80">mvn:org.scala-lang/scala-compiler/2.11.1</bundle>
+        <bundle start-level="80">mvn:org.scala-lang/scala-reflect/2.11.1</bundle>
+        <bundle start-level="80">mvn:org.scala-lang.modules/scala-xml_2.11/1.0.2</bundle>
+        <bundle start-level="80">mvn:org.scala-lang.modules/scala-parser-combinators_2.11/1.0.1</bundle>
+        <bundle start-level="80">wrap:mvn:postgresql/postgresql/9.1-901-1.jdbc4</bundle>
+    </feature>
+</features>
