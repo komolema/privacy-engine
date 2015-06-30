@@ -7,7 +7,7 @@ import org.squeryl.adapters.PostgreSqlAdapter
 import org.squeryl.{SessionFactory, Session}
 import org.squeryl.PrimitiveTypeMode._
 
-class Activator extends BundleActivator {
+class ModelActivator extends BundleActivator {
 
   def start(context: BundleContext) = {
     val bundleNames = context.getBundles map (b => b.getSymbolicName)

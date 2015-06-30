@@ -2,7 +2,7 @@ organization := "ac.za.cput"
 
 version := "0.3-SNAPSHOT"
 
-scalaVersion := "2.11.1"
+scalaVersion := "2.11.6"
 
 libraryDependencies ++= Seq(
   "org.osgi" % "org.osgi.core" % "5.0.0" % "provided",
@@ -15,7 +15,7 @@ resolvers += "Maven Central Server" at "http://repo1.maven.org/maven2"
 
 osgiSettings
 
-OsgiKeys.bundleActivator := Option("ac.za.cput.pe.model.activator.Activator")
+OsgiKeys.bundleActivator := Option("ac.za.cput.pe.model.activator.ModelActivator")
 
 OsgiKeys.exportPackage := Seq("ac.za.cput.pe.model.schema", "ac.za.cput.pe.model.domain")
 

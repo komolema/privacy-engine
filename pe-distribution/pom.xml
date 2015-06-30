@@ -33,6 +33,25 @@
             <scope>runtime</scope>
             <version>${karaf.version}</version>
         </dependency>
+        <dependency>
+            <!--   scope is runtime so the feature repo is listed in etc/org.apache.karaf.features.cfg file, and features will installed into the system directory-->
+            <groupId>org.apache.karaf.features</groupId>
+            <artifactId>enterprise</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+            <scope>runtime</scope>
+            <version>${karaf.version}</version>
+        </dependency>
+
+        <dependency>
+            <!--   scope is runtime so the feature repo is listed in etc/org.apache.karaf.features.cfg file, and features will installed into the system directory-->
+            <groupId>org.apache.cxf.karaf</groupId>
+            <artifactId>apache-cxf</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+            <scope>runtime</scope>
+            <version>3.0.4</version>
+        </dependency>
 
         <dependency>
             <groupId>ac.za.cput.lesie.pe</groupId>
@@ -87,6 +106,12 @@
                 <configuration>
                     <!-- no startupFeatures -->
                     <bootFeatures>
+                        <feature>standard</feature>
+                        <feature>ssh</feature>
+                        <feature>management</feature>
+                        <feature>config</feature>
+                        <feature>http</feature>
+                        <feature>cxf</feature>
                         <feature>pe-assembly</feature>
                     </bootFeatures>
                 </configuration>

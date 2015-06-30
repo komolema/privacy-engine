@@ -1,17 +1,19 @@
 package ac.za.cput.pe.api
 
-import akka.actor.Actor
+import javax.jws.WebService
+import javax.ws.rs.{PathParam, Produces, GET, Path}
 
-trait APIService {
-  def canMove(userKey: String, srcOrgKey: String, destOrgKey: String):ResultMessage = {
-    new Allow("Let it all through")
+@Path("/V1")
+@Produces(Array("application/json"))
+@WebService
+class APIService {
+
+  @GET
+  @Path("/canmove")
+  def canMove(@PathParam userKey: String, @PathParam srcOrgKey: String,
+              @PathParam destOrgKey: String):String = {
+    "Move It"
   }
 }
 
-class APIActor extends Actor with APIService{
 
-  def receive = {
-    case CanMove(userKey,srcOrgKey,destOrgKey) =>
-      sender ! canMove(userKey,srcOrgKey,destOrgKey)
-  }
-}

@@ -18,6 +18,11 @@
             <artifactId>pe-model</artifactId>
             <version>0.3-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>ac.za.cput</groupId>
+            <artifactId>pe-api</artifactId>
+            <version>0.3-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

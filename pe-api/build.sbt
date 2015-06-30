@@ -15,16 +15,20 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "org.osgi" % "org.osgi.core" % "5.0.0" % "provided",
   "org.apache.felix" % "org.apache.felix.framework" % "4.2.1" % "runtime",
-  "org.squeryl" % "squeryl_2.11" % "0.9.5-7",
-  "io.spray" % "spray-can_2.11" % "1.3.3",
-  "io.spray" % "spray-routing_2.11" % "1.3.3",
-  "io.spray" % "spray-json_2.11" % "1.3.2",
-  "org.json4s" % "json4s-native_2.11" % "3.3.0.RC2",
-  "org.json4s" % "json4s-core_2.11" % "3.3.0.RC2",
-  "org.json4s" % "json4s-ast_2.11" % "3.3.0.RC2",
-  "com.thoughtworks.paranamer" % "paranamer" % "2.7",
-  "com.typesafe.akka" % "akka-actor_2.11" % "2.3.11",
-  "com.typesafe.akka" % "akka-osgi_2.11" % "2.3.11"
+  "javax.annotation" % "javax.annotation-api" % "1.2",
+  "log4j" % "log4j" % "1.2.17",
+  "org.slf4j" % "slf4j-api" % "1.6.1",
+  "org.slf4j" % "slf4j-log4j12" % "1.6.1",
+  "org.apache.cxf" % "cxf-rt-rs-client" % "3.0.4",
+  "org.apache.cxf" % "cxf-rt-transports-http" % "3.0.4",
+  "org.apache.cxf" % "cxf-rt-transports-http-jetty" % "3.0.4",
+  "org.apache.cxf" % "cxf-rt-frontend-jaxws" % "3.0.4",
+  "org.apache.cxf" % "cxf-rt-frontend-jaxrs" % "3.0.4",
+  "org.apache.cxf" % "cxf-rt-databinding-jaxb" % "3.0.4",
+  "com.fasterxml.jackson.core" % "jackson-core" % "2.5.4",
+  "com.fasterxml.jackson.core" % "jackson-annotations" % "2.5.4",
+  "com.fasterxml.jackson.core" % "jackson-databind" % "2.5.4"
+
 )
 
 osgiSettings
@@ -33,9 +37,8 @@ OsgiKeys.bundleActivator := Option("ac.za.cput.pe.api.activator.APIActivator")
 
 OsgiKeys.importPackage := Seq(
   "sun.misc;resolution:=optional",
-  "spray.*",
-  "akka.*",
-  "org.json4s.*",
+  "javax.ws.*",
+  "org.apache.cxf.*",
   "*"
 )
 
