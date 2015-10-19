@@ -7,15 +7,14 @@ import org.squeryl.PrimitiveTypeMode._
 
 class PEUserRepository {
 
-  def userSharingPreferences(user:PEUser)={
-    val result = transaction {
-      join(configuration, peuser.leftOuter)((c,p) =>
+/*  def userSharingPreferences(user:DataOwner)={
+    transaction {
+      join(share, dataOwner.leftOuter)((c, p) =>
         where(user.key === p.map(_.key).get)
         select(c,p)
           on(c.peuserId === p.map(_.id))
         ).toList
     }
-    result
-  }
+  }*/
 
 }

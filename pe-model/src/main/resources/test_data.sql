@@ -31,26 +31,26 @@ INSERT INTO organisation(name,key,id)
     VALUES('Facebook','f123',10);
 
 --context
-INSERT INTO context(name, id, "organisationId")
-    VALUES('Smart Shopper',100,1);
-INSERT INTO context(name, id, "organisationId")
-    VALUES('Markhams Sharing',200,2);
-INSERT INTO context(name, id, "organisationId")
-    VALUES('fnbdata',300,3);
-INSERT INTO context(name, id, "organisationId")
-    VALUES('stddata',400,4);
-INSERT INTO context(name, id, "organisationId")
-    VALUES('etvdata',500,5);
-INSERT INTO context(name, id, "organisationId")
-    VALUES('dstv',600,6);
-INSERT INTO context(name, id, "organisationId")
-    VALUES('MTN-Calls',700,7);
-INSERT INTO context(name, id, "organisationId")
-    VALUES('Vodacom-Calls',800,8);
-INSERT INTO context(name, id, "organisationId")
-    VALUES('Twitter-Followers',900,9);
-INSERT INTO context(name, id, "organisationId")
-    VALUES('Facebook-Graph',1000,10);
+INSERT INTO context(description, key, id, "organisationId")
+    VALUES('Smart Shopper','context_key1', 100, 1);
+INSERT INTO context(description, key, id, "organisationId")
+    VALUES('Markhams Sharing','context_key2', 200, 2);
+INSERT INTO context(description, key, id, "organisationId")
+    VALUES('fnbdata','context_key3', 300, 3);
+INSERT INTO context(description, key, id, "organisationId")
+    VALUES('stddata','context_key4', 400, 4);
+INSERT INTO context(description, key, id, "organisationId")
+    VALUES('etvdata','context_key5', 500, 5);
+INSERT INTO context(description, key, id, "organisationId")
+    VALUES('dstv', 600,'context_key6', 6);
+INSERT INTO context(description, key, id, "organisationId")
+    VALUES('MTN-Calls','context_key7', 700, 7);
+INSERT INTO context(description, key, id, "organisationId")
+    VALUES('Vodacom-Calls','context_key8', 800, 8);
+INSERT INTO context(description, key, id, "organisationId")
+    VALUES('Twitter-Followers','context_key9', 900, 9);
+INSERT INTO context(description, key, id, "organisationId")
+    VALUES('Facebook-Graph','context_key10', 1000, 10);
 
 --"OrganisationCategory"
 INSERT INTO "OrganisationCategory"("categoryId","organisationId")

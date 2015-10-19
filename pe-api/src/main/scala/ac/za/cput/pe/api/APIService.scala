@@ -1,17 +1,18 @@
 package ac.za.cput.pe.api
 
 import javax.jws.WebService
-import javax.ws.rs.{PathParam, Produces, GET, Path}
+import javax.ws.rs._
+
+import ac.za.cput.pe.api.domain.{ErrorResponse, SharingResponse, SharingRequest}
 
 @Path("/V1")
 @Produces(Array("application/json"))
 @WebService
 class APIService {
 
-  @GET
+  @POST
   @Path("/canmove")
-  def canMove(@PathParam userKey: String, @PathParam srcOrgKey: String,
-              @PathParam destOrgKey: String):String = {
+  def canMove(request: SharingRequest):String = {
     "Move It"
   }
 }

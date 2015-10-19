@@ -2,13 +2,14 @@ organization := "ac.za.cput"
 
 version := "0.3-SNAPSHOT"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.1"
 
 libraryDependencies ++= Seq(
   "org.osgi" % "org.osgi.core" % "5.0.0" % "provided",
   "org.apache.felix" % "org.apache.felix.framework" % "4.2.1" % "runtime",
   "org.squeryl" % "squeryl_2.11" % "0.9.5-7",
-  "postgresql" % "postgresql" % "9.1-901-1.jdbc4"
+  "postgresql" % "postgresql" % "9.1-901-1.jdbc4",
+  "cglib" % "cglib-nodep" % "3.1"
 )
 
 resolvers += "Maven Central Server" at "http://repo1.maven.org/maven2"

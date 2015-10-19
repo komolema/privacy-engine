@@ -1,7 +1,7 @@
 package ac.za.cput.pe.model.activator
 
 import ac.za.cput.pe.model.repository.PEUserRepository
-import ac.za.cput.pe.model.schema.{PEUser, PeDB}
+import ac.za.cput.pe.model.schema.{DataOwner, PeDB}
 import org.osgi.framework._
 import org.squeryl.adapters.PostgreSqlAdapter
 import org.squeryl.{SessionFactory, Session}
@@ -13,16 +13,16 @@ class ModelActivator extends BundleActivator {
     val bundleNames = context.getBundles map (b => b.getSymbolicName)
     println("Installed bundles:" + bundleNames)
 
-    startDatabaseSession(false)
+    startDatabaseSession(true)
 
-    val user = new PEUser("karabo","molema","komolema","km123")
+    val user = new DataOwner("karabo","molema","komolema","km123")
 
     val repo = new PEUserRepository
 
-    val results = repo.userSharingPreferences(user)
+/*    val results = repo.userSharingPreferences(user)
 
     for( r <- results)
-      println(r)
+      println(r)*/
 
   }
 
