@@ -15,15 +15,6 @@ class ModelActivator extends BundleActivator {
 
     startDatabaseSession(true)
 
-    val user = new DataOwner("karabo","molema","komolema","km123")
-
-    val repo = new PEUserRepository
-
-/*    val results = repo.userSharingPreferences(user)
-
-    for( r <- results)
-      println(r)*/
-
   }
 
   def stop(context: BundleContext) = {}

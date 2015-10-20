@@ -53,7 +53,7 @@ sealed class Organisation(val name: String, val key: String) extends BaseEntity 
   lazy val dataHolderShares: OneToMany[Share] = PeDB.dataHolderToShare.left(this)
 }
 
-sealed class Share(val date: LocalDate, val dataHolderId: Long, val thirdPartyId: Long, val contextId: Long)
+sealed class Share(val date: LocalDate, val status: String, val dataHolderId: Long, val thirdPartyId: Long, val contextId: Long)
   extends BaseEntity {
   lazy val dataHolder: ManyToOne[Organisation] = PeDB.dataHolderToShare.right(this)
   lazy val thirdParty: ManyToOne[Organisation] = PeDB.thirdPartyToShare.right(this)
@@ -77,7 +77,7 @@ sealed class PolicyContext(val contextId: Long, val policyId: Long, val dataOwne
 
 }
 
-sealed class DataOwner(val name: String, val surname: String, val alias: String, val key: String) extends BaseEntity {
+sealed class DataOwner(val name: String, val surname: String, val key: String) extends BaseEntity {
   lazy val policyContexts: OneToMany[PolicyContext] = PeDB.dataOwnerToPolicyContext.left(this)
 }
 
