@@ -114,6 +114,8 @@
                         <feature>http</feature>
                         <feature>cxf</feature>
                         <feature>pe-assembly</feature>
+                        <feature>jndi</feature>
+                        <feature>transaction</feature>
                     </bootFeatures>
                 </configuration>
             </plugin>
