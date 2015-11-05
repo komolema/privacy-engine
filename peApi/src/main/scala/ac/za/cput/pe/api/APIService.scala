@@ -39,11 +39,11 @@ class APIService {
     if(!validationResult)
       Left(Seq(ErrorCodes.ERR_SHARING_REQUEST_INVALID))
     else {
-      if (policyManager.validateHolderAndThirdParty(request.dataHolderKey.get,
+      if (policyManager.validateHolderAndThirdParty(request.dataControllerKey.get,
         request.thirdPartyKey.get) == false) {
         Left(Seq(ErrorCodes.ERR_HOLDER_AND_THIRDPARTY_INVALID))
       } else {
-        val (halt, proceed) = policyManager.executeContextPolicies(request.contextKey.get, request.dataOwnerKey.get,
+        val (halt, proceed) = policyManager.executeContextPolicies(request.contextKey.get, request.dataSubjectKey.get,
           request.data.map(d => new AuxillaryData(d._1, d._2, 0)).toSeq)
           .partition(_ == ContextStatus.HALT)
 
@@ -58,9 +58,8 @@ class APIService {
   }
 
   private def validateRequest(request: SharingRequest): Boolean = {
-    request.contextKey.isDefined && request.dataOwnerKey.isDefined &&
-    request.thirdPartyKey.isDefined && request.dataHolderKey.isDefined &&
-    request.data.nonEmpty
+    request.contextKey.isDefined && request.dataSubjectKey.isDefined &&
+    request.thirdPartyKey.isDefined && request.dataControllerKey.isDefined
   }
 
   def setPolicyManager(pm: PolicyManager) =

@@ -16,9 +16,9 @@
 package ac.za.cput.pe.api.domain
 
 
-class SharingRequest(val dataHolderKey: Option[String],
+class SharingRequest(val dataControllerKey: Option[String],
                      val contextKey: Option[String],
-                     val dataOwnerKey: Option[String],
+                     val dataSubjectKey: Option[String],
                      val thirdPartyKey: Option[String],
                      val data: Map[String, String]){
   def SharingRequest = {}
