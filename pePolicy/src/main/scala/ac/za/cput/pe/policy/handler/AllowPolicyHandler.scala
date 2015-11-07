@@ -20,7 +20,7 @@ import ac.za.cput.pe.model.schema.AuxillaryData
 import ac.za.cput.pe.policy.ContextStatus
 import ac.za.cput.pe.policy.ContextStatus.ContextState
 
-sealed class AcceptPolicyHandler extends PolicyHandler {
+sealed class AllowPolicyHandler extends PolicyHandler {
   override def handle(data: Seq[AuxillaryData]): ContextState = {
     ContextStatus.PROCEED
   }

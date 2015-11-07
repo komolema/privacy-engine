@@ -20,7 +20,7 @@ package ac.za.cput.pe.policy
 import ac.za.cput.pe.model.repository.PrivacyEngineRepository
 import ac.za.cput.pe.model.schema.AuxillaryData
 import ac.za.cput.pe.policy.ContextStatus.ContextState
-import ac.za.cput.pe.policy.handler.{PolicyHandler, RejectPolicyHandler, AcceptPolicyHandler}
+import ac.za.cput.pe.policy.handler.{PolicyHandler, RejectPolicyHandler, AllowPolicyHandler}
 
 trait PolicyManager {
   def validateHolderAndThirdParty(dataHolderKey: String, thirdPartyKey: String): Boolean
@@ -33,7 +33,7 @@ sealed class PolicyManagerImpl extends PolicyManager {
 
   private var privacyEngineRepository: PrivacyEngineRepository = _
 
-  private val policies = Map("ACCEPT" -> new AcceptPolicyHandler,
+  private val policies = Map("ALLOW" -> new AllowPolicyHandler,
     "REJECT" -> new RejectPolicyHandler)
 
   override def validateHolderAndThirdParty(dataHolderKey: String, thirdPartyKey: String): Boolean ={
