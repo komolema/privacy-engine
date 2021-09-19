@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+    <reference id="privacyEngineRepository" interface="ac.za.cput.pe.model.repository.PrivacyEngineRepository"/>
+
+    <service id="policyManager" interface="ac.za.cput.pe.policy.PolicyManager">
+        <bean class="ac.za.cput.pe.policy.PolicyManagerImpl">
+            <property name="privacyEngineRepository" ref="privacyEngineRepository"/>
+        </bean>
+    </service>
+</blueprint>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+    <service id="privacyEngineRepository" interface="ac.za.cput.pe.model.repository.PrivacyEngineRepository">
+        <bean class="ac.za.cput.pe.model.repository.PrivacyEngineRepositoryImpl">
+            <argument ref="peSession" />
+        </bean>
+    </service>
+
+    <bean id="peSession" class="ac.za.cput.pe.model.repository.factory.PESessionFactory"
+          factory-method="createSession"/>
+</blueprint>
